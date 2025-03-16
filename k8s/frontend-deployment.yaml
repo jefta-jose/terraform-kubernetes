@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+#the above defines a deployment named frontend
+spec:
+  replicas: 3
+#the above ensure 3 pods are running for high availability
+  selector:
+    matchLabels:
+      app: frontend
+#the deployment will manage pods with the label app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+#each pod created will have the label app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: jeffazurecontainerreigstry.azurecr.io/my-angular-frontend
+          ports:
+            - containerPort: 80
+#defines a container named frontedn inside each pod
+#uses our pushed container image jeffazurecontainerreigstry.azurecr.io/my-angular-frontend
+      imagePullSecrets:
+        - name: acr-secret
+---
+#uses a kubernetes secret (acr-secret) to authenticate with azure container registry
+
+#this service exposes the frontend deployment so users can access it
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+# defines a service named frontend
+spec:
+  selector:
+    app: frontend
+#selects pods that have the label app: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+#port 80 (external) maps to port 80 (inside the pod)
+  type: LoadBalancer
+#creates an external LoadBalancer to expose the frontend on the internet

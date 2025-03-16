@@ -1,0 +1,21 @@
+<div class="movies-list">
+  <h1>Welcome to MoviesHub 🎬</h1>
+
+  <!-- Loader -->
+  <div *ngIf="isLoading" class="loader">
+    <p>Loading movies...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Movies List -->
+  <ul *ngIf="!isLoading && !errorMessage">
+    <li *ngFor="let movie of movies">
+      <strong>{{ movie.name }}</strong> ({{ movie.releaseDate | date:'yyyy' }})
+      <p class="movie-description">{{ movie.description }}</p>
+    </li>
+  </ul>
+</div>

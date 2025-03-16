@@ -1,0 +1,69 @@
+# Visual Studio & JetBrains Rider
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+out/
+*.dll
+*.exe
+*.log
+*.pdb
+*.cache
+*.vspscc
+*.vssscc
+
+# ASP.NET Core environment settings
+appsettings.json
+appsettings.*.json
+secrets.json
+
+# Rider and ReSharper files
+*.sln.iml
+*.DotSettings
+*.DotSettings.user
+
+# Packages & dependencies
+node_modules/
+packages/
+*.nupkg
+*.lock.json
+
+# Entity Framework migrations
+Migrations/
+efcache/
+
+# Log & Temp files
+logs/
+*.log
+*.pid
+*.tar
+*.gz
+*.zip
+
+# IDE settings
+*.csproj.user
+*.dbmdl
+*.bak
+*.mdf
+*.ldf
+
+# Docker & Kubernetes
+.dockerignore
+docker-compose.override.yml
+
+# Security
+secrets.json
+.env
+*.key
+*.pfx
+*.pem
+
+# Miscellaneous
+Thumbs.db
+Desktop.ini

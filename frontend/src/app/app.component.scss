@@ -1,0 +1,86 @@
+/* General Page Styling */
+.movies-list {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+  
+/* Page Title */
+.movies-list h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16px;
+}
+  
+/* Loader */
+.loader {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    padding: 10px;
+    background-color: #e0f2ff;
+    border-left: 4px solid #007bff;
+}
+  
+/* Error Message */
+.error {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d9534f;
+    padding: 10px;
+    background-color: #fbe9e7;
+    border-left: 4px solid #d9534f;
+}
+  
+/* Movies List */
+.movies-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.movies-list li {
+    background: white;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+}
+  
+.movies-list li strong {
+    color: #000;
+}
+  
+.movies-list li:last-child {
+    border-bottom: none;
+}
+
+/* Movie Description */
+.movie-description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .movies-list {
+        padding: 10px;
+    }
+
+    .movies-list h1 {
+        font-size: 20px;
+    }
+
+    .movies-list li {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .movie-description {
+        font-size: 13px;
+    }
+}
